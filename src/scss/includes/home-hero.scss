@@ -1,0 +1,93 @@
+.home-hero {
+  position: relative;
+  .swiper-slide {
+    //padding: 19rem 3%;
+    display: flex;
+    justify-content: center;
+    height: calc(100vh - 100px);
+    min-height: 650px;
+    padding-top: 8rem;
+    @extend %bg-cover;
+    position: relative;
+    @include media-breakpoint-down(md) {
+      height: calc(70vh - 100px);
+      padding-top: 7rem;
+    }
+    @include media-breakpoint-down(sm) {
+      height: calc(50vh - 100px);
+      min-height: 550px;
+    }
+    &::before {
+      @extend %pseudo;
+      @extend %pos-cover;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.27) 0%,rgba(0,0,0,0) 50%,rgba(0,0,0,0.66) 100%);
+    }
+    .content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      color: #fff;
+      position: relative;
+      padding: 0 1rem;
+      h1 {
+        position: relative;
+        display: inline-block;
+        z-index: 1;
+        font-size: 7rem;
+        text-transform: uppercase;
+        margin-bottom: .5rem;
+        @include media-breakpoint-down(md) {
+          font-size: 4rem;
+        }
+        @include media-breakpoint-down(sm) {
+          font-size: 2rem;
+        }
+        &::before {
+          @extend %pseudo;
+          top: -1rem;
+          bottom: -.5rem;
+          left: -6%;
+          right: -6%;
+          background: $purple url('img/glyphs.png') center repeat;
+          clip-path: polygon(0 10%,100% 0%,97% 88%,3% 100%);
+          z-index: -1;
+        }
+      }
+      .subtitle {
+        font-family: $alt-font;
+        font-size: 4.2rem;
+        margin-bottom: .5rem;
+        line-height: 1;
+        @include media-breakpoint-down(md) {
+          font-size: 2rem;
+        }
+        @include media-breakpoint-down(sm) {
+          text-align: center;
+        }
+      }
+    }
+  }
+  .swiper-pagination {
+    position: relative;
+    &-wrapper {
+      bottom: 1rem;
+      left: 0; right: 0;
+      position: absolute;
+      z-index: 200;
+      height: 2rem;
+    }
+    &-bullet {
+      width: 1.5rem;
+      height: 1.5rem;
+      border: solid 2px #fff;
+      background-color: transparent;
+      opacity: 1;
+      margin: 0 .25rem;
+      &-active {
+        background-color: #fff;
+      }
+    }
+  }
+
+}

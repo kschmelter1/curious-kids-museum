@@ -1,0 +1,176 @@
+.ck-navigation {
+  position: absolute;
+  top: -1rem;
+  left:0;
+  right: 0;
+  z-index: 100;
+  .container > .row {
+    @include media-breakpoint-down(sm) {
+      justify-content: center !important;
+    }
+  }
+}
+
+.ck-navigation .navbar {
+  padding-right: 0;
+  .nav-link {
+    font-family: $alt-font;
+    color: #fff;
+    font-size: 2rem;
+    padding-right: .75rem;
+    padding-left: .75rem;
+    line-height: 1;
+    transition: all .25s ease;
+    @extend %transition;
+    &.dropdown-toggle {
+      &::after {display: none;}
+    }
+  }
+  .cta-donate {
+    position: relative;
+    &:before {
+      @extend %pseudo;
+      top: 0; bottom: 0; right: 0; left: 0;
+      background-color: $yellow;
+      z-index: -2;
+      clip-path: polygon(100% 85%,0% 100%,0% 0%,91% 12%);
+      transition: all .25s ease;
+    }
+    &:after {
+      @extend %pseudo;
+      top: 2px; bottom: 2px; right: 2px; left: 2px;
+      background-color: $grey;
+      z-index: -1;
+      clip-path: polygon(100% 85%,0% 100%,0% 0%,91% 12%);
+      transition: all .25s ease;
+    }
+    .nav-link {
+      text-transform: uppercase;
+    }
+    &:hover {
+      &:after {
+        background-color: $green;
+      }
+      &:after, &:before {
+        clip-path: polygon(100% 100%,0% 100%,0% 0%,100% 0%);
+      }
+      .nav-link {
+        color: $yellow;
+      }
+    }
+
+  }
+  .cta-join {
+    position: relative;
+    padding-left: .15rem;
+    &::before {
+      @extend %pseudo;
+      top: 0; bottom: 0; right: -1px; left: 0;
+      background-color: $yellow;
+      z-index: -2;
+      clip-path: polygon(6% 12%,100% 0%,100% 100%,0% 86%);
+      transition: all .25s ease;
+    }
+    &::after {
+      @extend %pseudo;
+      top: 2px; bottom: 2px; right: 2px; left: 2px;
+      background-color: $yellow;
+      z-index: -1;
+      clip-path: polygon(6% 12%,100% 0%,100% 100%,0% 86%);
+      transition: all .25s ease;
+    }
+    .nav-link {
+      text-transform: uppercase;
+      color: $red;
+      &.active {
+        color: $red;
+      }
+    }
+    &:hover {
+      &:after, &:before {
+      //  background-color: darken($yellow, 15%);
+        clip-path: polygon(0% 0%,100% 0%,100% 100%,0% 100%);
+      }
+      .nav-link {
+        color: #000;
+      }
+    }
+  }
+  .dropdown-menu {
+    background-color: $light;
+    background-color: rgba(255,255,255,.75);
+    left: .25rem;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    box-shadow: 0px 6px 8px 0px rgba(0,0,0,0.28);
+
+    .dropdown-item {
+      padding: 0.75rem 1.5rem .75rem 1.5rem;
+      background-color: transparent;
+      transition: all .5s ease;
+      font-size: 1.1rem;
+      font-weight: bold;
+      &:hover {
+        background-color: $light;
+      }
+      &.active {
+        background-color: $purple;
+      }
+
+    }
+  }
+}
+
+
+@media (min-width: 992px) {
+  .drop-animate {
+    animation-duration: 0.3s;
+    -webkit-animation-duration: 0.3s;
+    animation-fill-mode: both;
+    -webkit-animation-fill-mode: both;
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateY(1rem);
+    opacity: 0;
+  }
+  100% {
+    transform:translateY(0rem);
+    opacity: 1;
+  }
+  0% {
+    transform: translateY(1rem);
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes slideIn {
+  0% {
+    -webkit-transform: transform;
+    -webkit-opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    -webkit-opacity: 1;
+  }
+  0% {
+    -webkit-transform: translateY(1rem);
+    -webkit-opacity: 0;
+  }
+}
+
+.drop-slideIn {
+  -webkit-animation-name: slideIn;
+  animation-name: slideIn;
+}
+
+.navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover, .navbar-light .navbar-nav .dropdown.show > .nav-link {
+  color: $yellow;
+}
+.navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show {
+  color: #fff;
+}

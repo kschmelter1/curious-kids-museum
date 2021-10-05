@@ -1,0 +1,102 @@
+.footer-menu {
+  background: $red url('img/glyphs.png') center repeat;
+  color: #fff;
+  padding: 1rem 0;
+  background-size: 450px;
+  a {
+    color: #fff;
+    font-family: $alt-font;
+    font-size: 1.75rem;
+  }
+  .footer-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .logo {
+      max-width: 100%;
+      width: 5rem;
+    }
+    .nav {
+      @include media-breakpoint-down(sm) {
+        display: none;
+      }
+    }
+    .nav-link {
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+}
+
+footer {
+  @include media-breakpoint-down(sm) {
+    text-align: center;
+  }
+  a {
+    color: #000;
+  }
+  h2 {
+    text-transform: uppercase;
+  }
+  address {
+    span {
+      font-weight: bold;
+    }
+  }
+  .footer {
+    &-top {
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+      font-size: .9rem;
+      @include media-breakpoint-down(sm) {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+      }
+      p:last-child {
+        margin-bottom: 0;
+      }
+      h2 {
+        @include media-breakpoint-down(sm) {
+          margin: 0;
+        }
+      }
+    }
+    &-quicklinks {
+      .nav-link {
+        font-weight: bold;
+        padding: .15rem 0;
+        &:hover {
+          color: #000;
+          text-decoration: underline;
+        }
+      }
+    }
+    &-admission {
+      @include media-breakpoint-down(sm) {
+        margin-bottom: 1rem;
+      }
+    }
+    &-credit {
+      padding: 2rem 0;
+      border-top: solid 1px $light;
+      .divider {
+        @include media-breakpoint-down(sm) {
+          display: none;
+        }
+      }
+      span {
+        @include media-breakpoint-down(sm) {
+          display: block;
+        }
+      }
+    }
+    &-seo {
+      background-color: $grey;
+      font-size: .9rem;
+      padding: 1rem 0;
+      color: #C0C0C0;
+    }
+  }
+}

@@ -1,0 +1,130 @@
+body {
+  font-family: $main-font;
+  font-size: 1.2rem;
+  @include media-breakpoint-down(sm) {
+    font-size: 1.1rem;
+  }
+}
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: $alt-font;
+}
+h2 {
+  color: $purple;
+  font-size: 3rem;
+  text-transform: uppercase;
+  line-height: 1;
+  @include media-breakpoint-down(md){
+    font-size: 2.75rem;
+  }
+  @include media-breakpoint-down(sm){
+    font-size: 2rem;
+  }
+}
+h3 {
+  color: $green;
+}
+h4 {
+  color: $red;
+}
+
+img {
+  max-width: 100%;
+}
+
+
+.btn {
+  font-family: $alt-font;
+  text-transform: uppercase;
+  position: relative;
+  &-outline-yellow {
+    color: #fff;
+    z-index: 1;
+    font-size: 1.5rem;
+    line-height: 1;
+    padding: .5rem 1.5rem .25rem;
+    width: 100%;
+    /*&::after {
+      @extend %pseudo;
+      top: -1rem;
+      bottom: -1rem;
+      left: -7%;
+      right: -6%;
+      border: solid 2px $yellow;
+      clip-path: polygon(0 10%,100% 0%,97% 88%,3% 100%);
+      z-index: -1;
+    }*/
+    .animation {
+      z-index: -1;
+      position: absolute;
+    //  top: -.5rem;
+    top: -10%;
+      left: 0;
+      right: -.65rem;
+      bottom: -.65rem;
+      transition: transform 250ms ease-in-out;
+    }
+    &:hover {
+      color: #fff;
+      .animation {
+      /*  transform: skew(0deg)rotate(0deg)scale(1);
+        animation-name: btnanim;
+        animation-duration: .65s;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease-in-out;*/
+        transform: skew(5deg)rotate(3deg)scale(1.1);
+      }
+    }
+  }
+}
+/*
+.animation {
+  //width: 50vw;
+  svg {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@keyframes btnanim {
+    0% {
+  transform: skew(0deg)rotate(0deg)scale(1);
+}
+30% {
+  transform: skew(10deg)rotate(0deg)scale(1.1);
+}
+60% {
+  transform: skew(10deg)rotate(6deg)scale(1.2);
+}
+100% {
+  transform: skew(0deg)rotate(0deg)scale(1);
+ }
+}
+*/
+
+.post-date {
+  color: $red;
+  text-transform: uppercase;
+  font-size: 2.75rem;
+  margin-bottom: 1rem;
+  font-family: $alt-font;
+  line-height: 1;
+}
+
+.single-content {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  img {
+    &.alignleft {
+      float: left;
+      margin: 0 1rem 1rem 0;
+    }
+    &.alignright {
+      float: right;
+      margin: 0 0 1rem 1rem;
+    }
+    &.aligncenter {
+      display: block;
+      margin: 1rem auto;
+    }
+  }
+}

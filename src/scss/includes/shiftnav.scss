@@ -1,0 +1,50 @@
+body {
+  #shiftnav-toggle-main {
+  background-color: $purple;
+  color: #fff;
+  }
+  #shiftnav-main {
+    background-color: $purple;
+    background: $purple url('img/glyphs.png') center repeat;
+    background-size: 400px;
+    .shiftnav-menu-image {
+      text-align: center;
+      padding-bottom: 0;
+    }
+    h1 {
+      line-height: 1;
+      font-size: 2.25rem;
+      text-align: center;
+      //padding-top: 0;
+      @extend %transition;
+      &:hover {
+        background-color: darken($purple,10%);
+      }
+      a {
+        color: #fff;
+        &:hover {
+          text-decoration: none;
+        }
+      }
+
+    }
+    ul.shiftnav-menu > li.menu-item > .shiftnav-target {
+      font-weight: bold;
+      font-size: 1rem;
+    }
+    ul.shiftnav-menu li.menu-item>.shiftnav-target, ul.shiftnav-menu li.shiftnav-retract>.shiftnav-target {
+      padding: .5rem 25px;
+    }
+    ul.shiftnav-menu > li.shiftnav-sub-accordion.current-menu-ancestor > .shiftnav-target, ul.shiftnav-menu > li.shiftnav-sub-shift.current-menu-ancestor > .shiftnav-target,
+    ul.shiftnav-menu li.menu-item.shiftnav-active > .shiftnav-target, ul.shiftnav-menu li.menu-item.shiftnav-in-transition > .shiftnav-target,
+    ul.shiftnav-menu li.menu-item.current-menu-item > .shiftnav-target, ul.shiftnav-menu li.menu-item ul.sub-menu .current-menu-item .shiftnav-target {
+      background-color: darken($purple, 5%);
+    }
+    ul.shiftnav-menu ul.sub-menu {
+      background-color: darken($purple, 10%);
+      li.menu-item > .shiftnav-target {
+        color: #fff;
+      }
+    }
+  }
+}

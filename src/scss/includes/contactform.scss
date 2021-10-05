@@ -1,0 +1,140 @@
+.wpcf7 {
+  h2 {
+    margin-bottom: 2.25rem;
+  }
+  .credit {
+    margin-top: -1rem;
+    small {
+      display: block;
+      line-height: 1.3;
+      padding: .15rem 2rem .5rem;
+      a {
+        color: #000;
+      }
+    }
+  }
+  .submit-wrapper {
+    position: relative;
+    padding: 1.25rem 0 0;
+    background: $light url('img/glyphs2.png') center repeat;
+    background-size: 200px;
+    border: solid 1px $black;
+    p {
+      display: none;
+    }
+    .ajax-loader {
+      height: 0;
+      margin: 0;
+    }
+    .btn {
+      font-family: $alt-font;
+      color: $purple;
+      text-transform: uppercase;
+      font-size: 2rem;
+      background-color: #fff;
+      margin-bottom: 0;
+      padding: .15rem 1rem 0;
+      top: -1.25rem;
+      left: 1rem;
+      line-height: 1.2;
+      position: absolute;
+      border: solid 1px $black;
+      -webkit-appearance: none;
+      border-radius: 0;
+      @extend %transition;
+      &:hover {
+        background-color: $purple;
+        color: #fff;
+      }
+    }
+  }
+  .form-group {
+    margin-bottom: 2.75rem;
+    br {
+      display: none;
+    }
+    .input-wrapper {
+      position: relative;
+      padding: 1.25rem 0 0;
+      @extend %worms;
+      border: solid 1px $black;
+    /*  &::before {
+        @extend %pseudo;
+        top: 1.1rem;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        border: solid 1px $black;
+        z-index: -1;
+      }*/
+    }
+    label {
+      font-family: $alt-font;
+      color: $secondary;
+      text-transform: uppercase;
+      font-size: 2rem;
+      background-color: #fff;
+      margin-bottom: 0;
+      padding: .15rem 1rem 0;
+      top: -1.25rem;
+      left: 1rem;
+      line-height: 1.2;
+      position: absolute;
+      border: solid 1px $black;
+      @include media-breakpoint-down(sm) {
+        font-size: 1.5rem;
+        padding: 0 .5rem;
+        top: -1rem;
+      }
+    }
+    select {
+      height: auto !important;
+    }
+    .form-control {
+      border: 0;
+      padding: .75rem 1.25rem;
+      font-size: 1.45rem;
+      background: transparent;
+      @include media-breakpoint-down(sm){
+        font-size: 1.15rem;
+      }
+      &:focus {
+        border: 0;
+        outline: 0;
+        box-shadow: none;
+      }
+    }
+    .wrap {
+      position: relative;
+      display: block;
+      &::after {
+        @extend %pseudo;
+        @extend %fa;
+        font-weight: 200;
+        content: "\f107";
+        right: 1rem;
+        top: 50%;
+        transform: translateY(-50%);
+        pointer-events: none;
+        font-size: 1.5rem;
+      }
+    }
+    select {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      -o-appearance: none;
+       appearance: none;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+    select::-ms-expand {
+      display: none;
+    }
+  }
+}
+
+input:-internal-autofill-selected {
+  background-color: rgba(0,0,0,0) !important;
+  color: $black !important;
+}
